@@ -9,7 +9,7 @@ class ClassLoader
 
     public function addDir($dir)
     {
-        $this->dir = $dir;
+        $this->dir = rtrim($dir, '/') . '/';
     }
 
     public function loadClass($classname)
