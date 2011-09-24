@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phpunit>
+    <testsuites>
+        <testsuite name="All Unit Tests">
+            <directory phpVersion="5.3">.</directory>
+        </testsuite>
+    </testsuites>
+</phpunit>
