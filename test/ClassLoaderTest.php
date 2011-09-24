@@ -11,4 +11,13 @@ class ClassLoaderTest extends PHPUnit_Framework_TestCase
 
         $this->assertTrue(class_exists('Foo'));
     }
+    
+    public function testLoadClassIsSuccessfulWhenOmittingTrailingSlash()
+    {
+        $loader = new ClassLoader();
+        $loader->addDir('test/_fixture');
+        $loader->loadClass('Bar');
+
+        $this->assertTrue(class_exists('Bar'));
+    }
 }
