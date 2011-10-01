@@ -4,4 +4,5 @@ require_once __DIR__ . '/src/ClassLoader.php';
 
 $classLoader = new ClassLoader();
 $classLoader->addDir('src');
+$classLoader->addDir('test');
 $classLoader->register();

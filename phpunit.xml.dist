@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<phpunit colors="true">
+<phpunit colors="true"
+        bootstrap="bootstrap.php">
     <testsuites>
         <testsuite name="All Unit Tests">
             <directory phpVersion="5.3">.</directory>

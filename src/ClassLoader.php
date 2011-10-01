@@ -3,18 +3,25 @@
 class ClassLoader
 {
     /**
-     * @var string
+     * @var array
      */
-    private $dir;
+    private $dirs;
 
     public function addDir($dir)
     {
-        $this->dir = rtrim($dir, '/') . '/';
+        $this->dirs[] = rtrim($dir, '/') . '/';
     }
 
     public function loadClass($classname)
     {
-        require $this->dir . $classname . '.php';
+        foreach ($this->dirs as $dir)
+        {
+            if (file_exists($dir . $classname . '.php'))
+            {
+                require $dir . $classname . '.php';
+                return;
+            }
+        }
     }
 
     public function register()
