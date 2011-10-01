@@ -20,4 +20,13 @@ class ClassLoaderTest extends PHPUnit_Framework_TestCase
 
         $this->assertTrue(class_exists('Bar'));
     }
+
+    public function testRegisterShouldLeadToSuccessfulAutoloading()
+    {
+        $loader = new ClassLoader();
+        $loader->addDir('test/_fixture');
+        $loader->register();
+
+        $this->assertTrue(class_exists('Baz'));
+    }
 }

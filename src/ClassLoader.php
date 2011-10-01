@@ -16,4 +16,9 @@ class ClassLoader
     {
         require $this->dir . $classname . '.php';
     }
+
+    public function register()
+    {
+        spl_autoload_register(array($this, 'loadClass'));
+    }
 }
